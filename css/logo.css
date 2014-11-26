@@ -249,6 +249,12 @@
   -o-transform: scale(1);
   transform: scale(1);
 }
-#btnIngreso:hover{
+#btnIngreso{
   background: #222222!important;
   color: #ffffff;
+}
+
+#btnIngreso:hover{
+  background: #21375E!important;
+  color: #ffffff;
+}

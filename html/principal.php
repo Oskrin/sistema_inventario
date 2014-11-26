@@ -39,7 +39,7 @@ include '../menus/menu.php';
         <script type="text/javascript" src="../js/jquery.smartmenus.js"></script>
     </head>
 
-    <body>
+    <body >
 
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
