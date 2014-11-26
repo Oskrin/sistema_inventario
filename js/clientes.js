@@ -8,6 +8,7 @@ function scrollToBottom() {
         scrollTop: $(document).height()
     }, 'slow');
 }
+
 function scrollToTop() {
     $('html, body').animate({
         scrollTop: 0
@@ -80,42 +81,34 @@ function guardar_cliente() {
                         $("#tipo_cli").focus();
                         alertify.alert("Seleccione Tipo cliente");
                     } else {
-                        
-                        if ($("#pais_cli").val() === "") {
-                            $("#pais_cli").focus();
-                            alertify.alert("Ingrese un pais");
+                        if ($("#direccion_cli").val() === "") {
+                            $("#direccion_cli").focus();
+                            alertify.alert("Ingrese una dirección");
                         } else {
-                            if ($("#ciudad_cli").val() === "") {
-                                $("#ciudad_cli").focus();
-                                alertify.alert("Ingrese una ciudad");
+                            if ($("#pais_cli").val() === "") {
+                                $("#pais_cli").focus();
+                                alertify.alert("Ingrese un pais");
                             } else {
-                                if ($("#direccion_cli").val() === "") {
-                                    $("#direccion_cli").focus();
-                                    alertify.alert("Ingrese una dirección");
+                                if ($("#ciudad_cli").val() === "") {
+                                    $("#ciudad_cli").focus();
+                                    alertify.alert("Ingrese una ciudad");
                                 } else {
                                     if ($("#cupo_credito").val() === "") {
                                         $("#cupo_credito").focus();
                                         alertify.alert("Ingrese cantidad del crédito");
                                     }else{
-                                        if ($("#id_director").val() === "") {
-                                            $("#directores").focus();
-                                            alertify.alert("Seleccione un Director@");
-                                        }else{
-                                            $.ajax({
-                                                type: "POST",
-                                                url: "../procesos/guardar_clientes.php",
-                                                data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() +
-                                                "&nombres_cli=" + $("#nombres_cli").val() + "&tipo_cli=" + $("#tipo_cli").val() + "&direccion_cli=" + $("#direccion_cli").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&pais_cli=" + $("#pais_cli").val() + "&ciudad_cli=" + $("#ciudad_cli").val() + "&email=" + $("#email").val() + "&cupo_credito=" + $("#cupo_credito").val() + "&notas_cli=" + $("#notas_cli").val() + "&id_director=" + $("#id_director").val(),
-                                                success: function(data) {
-                                                    var val = data;
-                                                    if (val == 1) {
-                                                        alertify.alert("Datos Guardados Correctamente",function(){
-                                                            location.reload();
-                                                        });
-                                                    }
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "../procesos/guardar_clientes.php",
+                                            data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() +
+                                            "&nombres_cli=" + $("#nombres_cli").val() + "&tipo_cli=" + $("#tipo_cli").val() + "&direccion_cli=" + $("#direccion_cli").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&pais_cli=" + $("#pais_cli").val() + "&ciudad_cli=" + $("#ciudad_cli").val() + "&email=" + $("#email").val() + "&cupo_credito=" + $("#cupo_credito").val() + "&notas_cli=" + $("#notas_cli").val(),
+                                            success: function(data) {
+                                                var val = data;
+                                                if (val == 1) {
+                                                    alertify.alert("Datos Guardados Correctamente",function(){location.reload();});
                                                 }
-                                            });
-                                        }
+                                            }
+                                        });
                                     }
                                 }
                             }
@@ -169,25 +162,18 @@ function modificar_cliente() {
                                             $("#cupo_credito").focus();
                                             alertify.alert("Ingrese cantidad del crédito");
                                         }else{
-                                            if ($("#id_director").val() === "") {
-                                                $("#directores").focus();
-                                                alertify.alert("Seleccione un Director@");
-                                            }else{
-                                                $.ajax({
-                                                    type: "POST",
-                                                    url: "../procesos/modificar_clientes.php",
-                                                    data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() + "&id_cliente=" + $("#id_cliente").val() +
-                                                    "&nombres_cli=" + $("#nombres_cli").val() + "&tipo_cli=" + $("#tipo_cli").val() + "&direccion_cli=" + $("#direccion_cli").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&pais_cli=" + $("#pais_cli").val() + "&ciudad_cli=" + $("#ciudad_cli").val() + "&email=" + $("#email").val() + "&cupo_credito=" + $("#cupo_credito").val() + "&notas_cli=" + $("#notas_cli").val()+ "&id_director=" + $("#id_director").val(),
-                                                    success: function(data) {
-                                                        var val = data;
-                                                        if (val == 1) {
-                                                            alertify.alert("Datos Modificados Correctamente",function(){
-                                                                location.reload();
-                                                            });
-                                                        }
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "../procesos/modificar_clientes.php",
+                                                data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() + "&id_cliente=" + $("#id_cliente").val() +
+                                                "&nombres_cli=" + $("#nombres_cli").val() + "&tipo_cli=" + $("#tipo_cli").val() + "&direccion_cli=" + $("#direccion_cli").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&pais_cli=" + $("#pais_cli").val() + "&ciudad_cli=" + $("#ciudad_cli").val() + "&email=" + $("#email").val() + "&cupo_credito=" + $("#cupo_credito").val() + "&notas_cli=" + $("#notas_cli").val(),
+                                                success: function(data) {
+                                                    var val = data;
+                                                    if (val == 1) {
+                                                        alertify.alert("Datos Modificados Correctamente",function(){location.reload();});
                                                     }
-                                                });  
-                                            }
+                                                }
+                                            });  
                                         }
                                     }
                                 }
@@ -241,9 +227,7 @@ function aceptar(){
         success: function(data) {
             var val = data;
             if (val == 1) {
-                alertify.alert("Cliente Eliminado Correctamente",function(){
-                    location.reload();
-                });
+                alertify.alert("Cliente Eliminado Correctamente",function(){ location.reload();});
             }
         }
     });  
@@ -263,7 +247,6 @@ function cancelar_acceso(){
 function nuevo_cliente() {
     location.reload();
 }
-
 
 function ValidNum() {
     if (event.keyCode < 48 || event.keyCode > 57) {
@@ -305,24 +288,19 @@ function punto(e){
     return true;   
 }
 
-function limpiar_campo(){
-    if($("#directores").val() === ""){
-        $("#id_director").val("");
-    }
-}
-
 function inicio() {
 
     //////////atributos////////////
     $("#ruc_ci").attr("disabled", "disabled");
     $("#nro_telefono").validCampoFranz("0123456789");
     $("#nro_celular").validCampoFranz("0123456789");
-    ///////////////////////////////
+    //////////////////////////////
     
     //////////////para valor////////
     $("#cupo_credito").on("keypress",punto);
     ////////////////////////////////
-    //
+
+
     ///////tipo pago//////////////
     $("#tipo_docu").change(function() {
         if ($("#tipo_docu").val() === "Cedula") {
@@ -350,12 +328,12 @@ function inicio() {
     });
     /////////////////////////////
     
-    //////////validar cedula ruc/////////////
+     //////////validar cedula ruc/////////////
     $("#ruc_ci").validarCedulaEC({
-        strict: false
+    strict: false
     });
     ///////////////////////////////// 
-  
+
     /////valida si ya existe/////
     $("#ruc_ci").keyup(function() {
         $.ajax({
@@ -465,18 +443,18 @@ function inicio() {
                             if(ruc == "001" ){
                                 if(digito3 < 6){ 
                                     if(nat == true){
-                                        if (digitoVerificador != d10){                          
-                                            alertify.error('El ruc persona natural es incorrecto.');
-                                            $("#ruc_ci").val("");
-                                        }else{
-                                            alertify.success('El ruc persona natural es correcto.');    
-                                        } 
+                                     if (digitoVerificador != d10){                          
+                                      alertify.error('El ruc persona natural es incorrecto.');
+                                      $("#ruc_ci").val("");
+                                      }else{
+                                       alertify.success('El ruc persona natural es correcto.');    
+                                      } 
                                     }
                                 }else{
                                     if(digito3 == 6){ 
                                         if (pub==true){  
                                             if (digitoVerificador != d9){                          
-                                                alertify.error('El ruc público es incorrecto.'); 
+                                                alertify.error('El ruc público es incorrecto.');
                                                 $("#ruc_ci").val("");
                                             }else{
                                                 alertify.success('El ruc público es correcto.'); 
@@ -497,7 +475,7 @@ function inicio() {
                                 }
                             }else{
                                 if(numero.length === 13){
-                                    alertify.error('El ruc es incorrecto.');  
+                                    alertify.error('El ruc es incorrecto.'); 
                                     $("#ruc_ci").val("");
                                 }
                             }
@@ -508,27 +486,6 @@ function inicio() {
         });
     });
     ////////////////////////////////
-    
-    /////buscador cliente nombres///// 
-    $("#directores").autocomplete({
-        source: "../procesos/buscar_directores.php",
-        minLength: 1,
-        focus: function(event, ui) {
-        $("#directores").val(ui.item.value);
-        $("#id_director").val(ui.item.id_director);
-        return false;
-        },
-        select: function(event, ui) {
-        $("#directores").val(ui.item.value);
-        $("#id_director").val(ui.item.id_director);
-        return false;
-        }
-        }).data("ui-autocomplete")._renderItem = function(ul, item) {
-        return $("<li>")
-        .append("<a>" + item.value + "</a>")
-        .appendTo(ul);
-    };
-    ////////////////////////////////////////////////
 
     //////////////////////
     $("#btnGuardar").click(function(e) {
@@ -559,20 +516,18 @@ function inicio() {
     $("#btnCancelar").on("click", cancelar_acceso);
     $("#btnNuevo").on("click", nuevo_cliente);
     //////////////////////////
-   
-    $("#directores").on("keyup", limpiar_campo);
-    
+
     /////////////////////////// 
     $("#clientes").dialog(dialogo);
     $("#clave_permiso").dialog(dialogo3);
     $("#seguro").dialog(dialogo4);
-    /////////////////////////// 
+   /////////////////////////// 
 
-  /////////////tabla clientes/////////
+   /////////////tabla clientes/////////
     jQuery("#list").jqGrid({
         url: '../xml/datos_clientes.php',
         datatype: 'xml',
-        colNames: ['Codigo', 'Tipo Documento', 'Identificacion', 'Nombres', 'Tipo Cliente', 'Fijo', 'Movil', 'Pais', 'Ciudad', 'Direccion', 'Correo', 'Credito', 'Nota', 'Director@','Id'],
+        colNames: ['Codigo', 'Tipo Documento', 'Identificacion', 'Nombres', 'Tipo Cliente', 'Fijo', 'Movil', 'Pais', 'Ciudad', 'Direccion', 'Correo', 'Credito', 'Nota'],
         colModel: [
             {name: 'id_cliente', index: 'id_cliente', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'tipo_docu', index: 'tipo_docu', editable: true, align: 'center', width: '120', search: false, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
@@ -586,9 +541,7 @@ function inicio() {
             {name: 'direccion_cli', index: 'direccion_cli', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'email', index: 'email', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'cupo_credito', index: 'cupo_credito', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'notas_cli', index: 'notas_cli', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'directores', index: 'directores', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'id_director', index: 'id_director', editable: true, align: 'center', width: '120',hidden: true, search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}}
+            {name: 'notas_cli', index: 'notas_cli', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}}
         ],
         rowNum: 10,
         width: 830,
@@ -599,6 +552,7 @@ function inicio() {
         shrinkToFit: false,
         sortorder: 'asc',
         caption: 'Lista de Clientes',
+        editurl: 'procesos/estadio_del.php',
         viewrecords: true,
         ondblClickRow: function(){
          var id = jQuery("#list").jqGrid('getGridParam', 'selrow');

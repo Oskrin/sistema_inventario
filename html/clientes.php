@@ -27,10 +27,9 @@ include '../menus/menu.php';
         <link href="../css/sm-core-css.css" rel="stylesheet" type="text/css" />
         <link href="../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript"src="../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <script type="text/javascript" src="../js/jquery-loader.js"></script>
-        <!--<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>-->
+        <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../js/grid.locale-es.js"></script>
         <script type="text/javascript" src="../js/jquery.jqGrid.src.js"></script>
@@ -138,13 +137,6 @@ include '../menus/menu.php';
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="notas_cli">Notas: </label>
-                                                        <div class="controls">
-                                                            <textarea name="notas_cli" id="notas_cli" rows="3" class="campo"></textarea>
-                                                        </div>
-                                                    </div>
                                                 </section>
 
                                                 <section class="columna2">
@@ -192,10 +184,9 @@ include '../menus/menu.php';
                                                     </div>
 
                                                     <div class="control-group">
-                                                        <label class="control-label" for="directores">Director@: <font color="red">*</font></label>
+                                                        <label class="control-label" for="notas_cli">Notas: </label>
                                                         <div class="controls">
-                                                            <input type="text" name="directores" id="directores" required class="campo" placeholder="Buscar..." />
-                                                            <input type="hidden" name="id_director"  id="id_director" readonly class="campo">
+                                                            <textarea name="notas_cli" id="notas_cli" rows="3" class="campo"></textarea>
                                                         </div>
                                                     </div>
                                                 </section>
