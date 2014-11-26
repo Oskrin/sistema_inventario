@@ -65,7 +65,7 @@
 	.sm-blue ul a {
 		padding:9px 40px 8px 23px;
 		background:transparent;
-		color:#247eab;
+		color:#152848;
 		font-size:16px;
 		text-shadow:none;
 	}
@@ -173,12 +173,12 @@
 		overflow:hidden;
 		border-width:8px; /* tweak size of the arrow */
 		border-style:dashed dashed solid dashed;
-		border-color:transparent transparent #247eab transparent;
+		border-color:transparent transparent #152848 transparent;
 	}
 	.sm-blue span.scroll-down-arrow {
 		top:6px;
 		border-style:solid dashed dashed dashed;
-		border-color:#247eab transparent transparent transparent;
+		border-color:#152848 transparent transparent transparent;
 	}
 
 
@@ -260,7 +260,7 @@
 	}
 	.sm-blue ul a {
 		background:transparent !important;
-		color:#247eab !important;
+		color:#152848 !important;
 		text-shadow:none !important;
 	}
 	.sm-blue a.current {
