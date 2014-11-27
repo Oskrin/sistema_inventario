@@ -316,6 +316,10 @@ function aceptar(){
         success: function(data) {
             var val = data;
             if (val == 1) {
+                alertify.alert("Error... El Producto tiene movimientos en el sistema",function(){
+                    location.reload();
+                });
+            }else{
                 alertify.alert("Producto Eliminado Correctamente",function(){
                     location.reload();
                 });
@@ -672,6 +676,7 @@ function inicio() {
          jQuery('#list').jqGrid('restoreRow', id);   
          jQuery("#list").jqGrid('GridToForm', id, "#productos_form");
          $("#btnGuardar").attr("disabled", true);
+         document.getElementById("cod_prod").readOnly = true;
          $("#productos").dialog("close");      
          }
     }).jqGrid('navGrid', '#pager',
@@ -711,6 +716,7 @@ function inicio() {
             if (id) {
                 jQuery("#list").jqGrid('GridToForm', id, "#productos_form");
                 $("#btnGuardar").attr("disabled", true);
+                document.getElementById("cod_prod").readOnly = true;
                 $("#productos").dialog("close");
             } else {
                 alertify.alert("Seleccione un fila");
