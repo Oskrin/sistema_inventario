@@ -84,8 +84,8 @@ textarea {
     font-family: 'Geostar Fill';
   font-style: normal;
   font-weight: 400;
-  src: local('Geostar Fill'), local('GeostarFill-Regular'), url(http://fonts.gstatic.com/s/geostarfill/v6/Y5ovXPPOHYTfQzK2aM-hujy24DTBG-RpCwXaYkM4aks.woff2) format('woff2');
-  color: #401000!important;
+  src: local('Geostar Fill'), local('GeostarFill-Regular');
+  color: #8C2200!important;
 }
 
 .navbar-fixed-top {
