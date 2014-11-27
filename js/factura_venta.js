@@ -735,6 +735,7 @@ function nuevo_cliente(){
                                 if(nat == true){
                                     if (digitoVerificador != d10){                          
                                         alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val();
                                         $("#direccion_cliente").attr("disabled", "disabled");
                                         $("#telefono_cliente").attr("disabled", "disabled");
                                         $("#correo").attr("disabled", "disabled");
@@ -754,6 +755,7 @@ function nuevo_cliente(){
                                         if(nat == true){
                                             if (digitoVerificador != d10){                          
                                                 alertify.error('El ruc persona natural es incorrecto.');
+                                                $("#ruc_ci").val();
                                                 $("#direccion_cliente").attr("disabled", "disabled");
                                                 $("#telefono_cliente").attr("disabled", "disabled");
                                                 $("#correo").attr("disabled", "disabled");
@@ -770,6 +772,7 @@ function nuevo_cliente(){
                                             if (pub==true){  
                                                 if (digitoVerificador != d9){                          
                                                     alertify.error('El ruc público es incorrecto.');
+                                                    $("#ruc_ci").val();
                                                     $("#direccion_cliente").attr("disabled", "disabled");
                                                     $("#telefono_cliente").attr("disabled", "disabled");
                                                     $("#correo").attr("disabled", "disabled");
@@ -786,6 +789,7 @@ function nuevo_cliente(){
                                                 if(pri == true){
                                                     if (digitoVerificador != d10){                          
                                                         alertify.error('El ruc privado es incorrecto.');
+                                                        $("#ruc_ci").val();
                                                         $("#direccion_cliente").attr("disabled", "disabled");
                                                         $("#telefono_cliente").attr("disabled", "disabled");
                                                         $("#correo").attr("disabled", "disabled");
@@ -803,6 +807,7 @@ function nuevo_cliente(){
                                 }else{
                                     if(numero.length === 13){
                                         alertify.error('El ruc es incorrecto.');
+                                        $("#ruc_ci").val();
                                         $("#direccion_cliente").attr("disabled", "disabled");
                                         $("#telefono_cliente").attr("disabled", "disabled");
                                         $("#correo").attr("disabled", "disabled");
@@ -825,17 +830,21 @@ function nuevo_cliente(){
 function comprobar1() {
     if ($("#num_factura").val() === "") {
         $("#num_factura").focus();
-        alertify.success("Ingrese número de factura");
+        alertify.alert("Ingrese número de factura");
     } else {
+        if ($("#id_cliente").val() === "" && $("#ruc_ci").val() !== "") {
+            nuevo_cliente();
+        }else{
             if ($("#id_cliente").val() === "") {
                 $("#ruc_ci").focus();
-                alertify.success("Indique un cliente");
+                alertify.alert("Indique un cliente");
             } else {
                 if ($("#ruc_ci").val() === "") {
                     $("#ruc_ci").focus();
-                    alertify.success("Indique un cliente");
+                    alertify.alert("Indique un cliente");
                 } 
             } 
+        }
     }
 }
 
@@ -1052,10 +1061,10 @@ function guardar_factura() {
                     $("#num_factura").focus();
                     alertify.alert("Error... El número de factura ya existe");
                 }else{
-                    if ($("#id_cliente").val() === "") {
-                        $("#id_cliente").focus();
-                        alertify.alert("Indique un cliente");
-                    } else {
+//                    if ($("#id_cliente").val() === "") {
+//                        $("#id_cliente").focus();
+//                        alertify.alert("Indique un cliente");
+//                    } else {
                         if ($("#ruc_ci").val().length !== 10 && $("#ruc_ci").val().length !== 13) {
                             $("#ruc_ci").val("");
                             $("#ruc_ci").focus();
@@ -1074,6 +1083,7 @@ function guardar_factura() {
                                         alertify.alert("Seleccione un tipo de precio");
                                     } else {
                                         if (tam.length === 0) {
+                                            $("#codigo").focus();
                                             alertify.alert("Error... Llene productos a la factura");
                                         } else {
                                             if ($("#formas").val() === "Credito" && $("#meses").val() === "") {
@@ -1131,7 +1141,7 @@ function guardar_factura() {
                                     }
                                 }
                             }
-                        } 
+//                        } 
                     } 
                 }
             }
@@ -1430,7 +1440,7 @@ function limpiar_campo(){
         $("#nombre_cliente").val("");
         $("#direccion_cliente").val("");
         $("#telefono_cliente").val("");
-        $("#saldo").val("");
+        $("#correo").val("");
         $("#direccion_cliente").attr("disabled", "disabled");
         $("#telefono_cliente").attr("disabled", "disabled");
         $("#correo").attr("disabled", "disabled");

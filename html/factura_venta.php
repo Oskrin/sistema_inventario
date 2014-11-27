@@ -156,7 +156,7 @@ $cont1++;
                                                         <legend></legend>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
-                                                                <td><label style="width: 100%; margin-left: 10px">Nro de Factura Preimpresa: </label></td>
+                                                                <td><label style="width: 100%">Nro de Factura Preimpresa: </label></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">001  - </label></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">001  - </label></td>
                                                                 <td><input type="text" name="num_factura" id="num_factura" class="campo" style="width: 100px" /></td>
@@ -168,16 +168,16 @@ $cont1++;
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Cédula Identidad/RUC: <font color="red">*</font></label></td>  
-                                                                <td><input type="text" name="ruc_ci"  id="ruc_ci" placeholder="Buscar....." class="campo" style="width: 150px"/></td>
-                                                                <td><label style="width: 100%; margin-left: 10px">Nombres Completos del Cliente: <font color="red">*</font></label></td>
-                                                                <td><input type="text" name="nombre_cliente" id="nombre_cliente" class="campo" style="width: 250px"/></td>
+                                                                <td><input type="text" name="ruc_ci"  id="ruc_ci" placeholder="Buscar....." class="campo" style="width: 200px"/></td>
+                                                                <td><label style="width: 100%; margin-left: 60px">Nombres Completos del Cliente: <font color="red">*</font></label></td>
+                                                                <td><input type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Buscar....." class="campo" style="width: 250px"/></td>
                                                             </tr>  
                                                         </table>
 
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Dirección: <font color="red">*</font></label></td>  
-                                                                <td><input type="text" name="direccion_cliente" id="direccion_cliente" class="campo" style="width: 250px" /></td>
+                                                                <td><input type="text" name="direccion_cliente" id="direccion_cliente" class="campo" style="margin-left: 75px; width: 250px" /></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Teléfono: </label></td>  
                                                                 <td><input type="text" name="telefono_cliente" id="telefono_cliente" class="campo" style="width: 120px; margin-left: 5px" /></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Correo: </label></td>  
@@ -188,8 +188,8 @@ $cont1++;
                                                         <table cellpadding="2" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Fecha Cancelación: <font color="red">*</font></label></td>
-                                                                <td><input type="text" name="cancelacion" id="cancelacion" class="campo" style="width: 150px" value="<?php echo date("Y-m-d"); ?>" readonly/></td>
-                                                                <td><label for="tipo_precio" style="width: 100%">Tipo de Precio: <font color="red">*</font></label></td>  
+                                                                <td><input type="text" name="cancelacion" id="cancelacion" class="campo" style="margin-left: 20px; width: 150px" value="<?php echo date("Y-m-d"); ?>" readonly/></td>
+                                                                <td><label for="tipo_precio" style="width: 100%; margin-left: 110px">Tipo de Precio: <font color="red">*</font></label></td>  
                                                                 <td><select id="tipo_precio" name="tipo_precio" style="width: 180px">
                                                                         <option value="MINORISTA">MINORISTA</option>
                                                                         <option value="MAYORISTA">MAYORISTA</option>
