@@ -1696,37 +1696,23 @@ background-repeat:no-repeat;
 /**/
 
 .btn {
-	-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 2px;
-  -moz-box-shadow: inset rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 2px;
-  box-shadow: inset rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 2px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(128, 128, 128, 0.1)));
-  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(128, 128, 128, 0.1));
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(128, 128, 128, 0.1));
-  background-image: -o-linear-gradient(rgba(255, 255, 255, 0), rgba(128, 128, 128, 0.1));
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(128, 128, 128, 0.1));
-  background-color: white;
-  border-color: whitesmoke whitesmoke #cfcfcf;
+
+  
+  
+  background: #512500!important;
   border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15);
   color: #333333;
-  *background-color: whitesmoke;
+  
   font-size: 14px;
   line-height: 22px;
-  -webkit-transition: background-color 0.2s;
-  -moz-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+ 
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.2);
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
   display: inline-block;
   margin-bottom: 0;
-  padding: 2px 12px;
+  padding: 5px 17px;
   text-align: center;
   vertical-align: middle;
   *border: 0;
@@ -1735,9 +1721,13 @@ background-repeat:no-repeat;
   *margin-left: .3em;
 }
 .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
-	background-color: whitesmoke;
+  
   color: #333333;
-  *background-color: #e8e8e8;
+   -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  transition: background-color 1s;
+  background: #A7211E!important;
 }
 .btn:active, .btn.active {
 	background-color: #dbdbdb \9;
@@ -1748,7 +1738,7 @@ background-repeat:no-repeat;
 .btn:hover {
 	color: #333333;
 	text-decoration: none;
-	background-color: #e6e6e6;
+	background-color: #A7211E;
 	background-position: 0 -15px;
 	-webkit-transition: background-position 0.1s linear;
 	-moz-transition: background-position 0.1s linear;
