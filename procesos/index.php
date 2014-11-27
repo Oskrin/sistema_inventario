@@ -17,7 +17,7 @@ while ($row = pg_fetch_row($consulta)) {
     $_SESSION['user'] = $row[10];
 }
 
-$_SESSION['empresa'] = "FRITADAS AMAZONAS";
+$_SESSION['empresa'] = "FACTURACIÓN";
 $_SESSION['slogan'] = "SERVICIOS INTEGRALES";
 $_SESSION['propietario'] = "JUAN PABLO GUERRA";
 $_SESSION['direccion'] = "Av. Bolivar";

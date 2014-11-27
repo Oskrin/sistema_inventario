@@ -113,26 +113,49 @@ $cont1++;
                                             <div class="widget big-stats-container">
                                                 <form id="formularios_fac" name="formularios_fac" method="post" class="form-horizontal">
                                                     <fieldset>
+                                                        <section class="columna_1">
+                                                            <div class="control-group">											
+                                                                <label class="control-label" for="nombres_cli">Comprobante:</label>
+                                                                <div class="controls">
+                                                                    <input type="text" name="comprobante" id="comprobante" readonly class="campo" value="<?php echo $cont1 ?>" style="width: 80px"/>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section class="columna_2">
+                                                            <div class="control-group">											
+                                                                <label class="control-label" for="nombres_cli">Fecha Actual:</label>
+                                                                <div class="controls">
+                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section class="columna_3">
+                                                            <div class="control-group">											
+                                                                <label class="control-label" for="nombres_cli">Hora Actual:</label>
+                                                                <div class="controls">
+                                                                    <input type="text" name="hora_actual" id="hora_actual" readonly class="campo" style="width: 100px"/>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                        <section class="columna_4">
+                                                            <div class="control-group">											
+                                                                <label class="control-label" for="nombres_cli"> Digitad@r:</label>
+                                                                <div class="controls">
+                                                                    <input type="text" name="digitador" id="digitador" value="<?php echo $_SESSION['nombres'] ?>" class="campo" style="width: 200px" readonly/>
+                                                                    <input type="hidden" name="comprobante2" id="comprobante2" class="campo" style="width: 100px" value="<?php echo $cont1 ?>" />
+                                                                </div>
+                                                            </div>
+                                                        </section> 
+                                                    </fieldset> 
+                                                    <br />
+
+                                                    <fieldset>
+                                                        <legend></legend>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
-                                                                <td><label for="comprobante" style="width: 100%">Comprobante Nro:</label></td>   
-                                                                <td><input type="text" name="comprobante" id="comprobante" class="campo" readonly style="width: 80px" value="<?php echo $cont1 ?>" /></td>
-                                                                <td><label style="width: 100%; margin-left: 10px">Fecha:</label></td>
-                                                                <td><input type="text" name="fecha_actual" id="fecha_actual" class="campo" readonly style="margin-left: 5px; width: 100px" value="<?php echo date("Y-m-d"); ?>" /></td>
-                                                                <td><label style="width: 100%; margin-left: 10px">Hora:</label></td>
-                                                                <td><input type="text" name="hora_actual" id="hora_actual" class="campo" readonly style="margin-left: 5px; width: 100px"/></td>
-                                                                <td><label for="proforma" style="width: 100%; margin-left: 10px">Proforma Nro:</label></td>   
-                                                                <td><input type="text" name="proforma" id="proforma" class="campo" style="margin-left: 5px; width: 100px"/></td>
-                                                                <td><input type="hidden" name="comprobante2" id="comprobante2" class="campo" style="width: 100px" value="<?php echo $cont1 ?>" /></td>
-                                                            </tr>  
-                                                        </table>  
-
-                                                        <hr style="color: #0056b2;" /> 
-
-                                                        <table cellpadding="2" border="0" style="margin-left: 10px">
-                                                            <tr>
-                                                                <td><label style="width: 100%">Digitador (a): </label></td>
-                                                                <td><input type="text" name="digitador" id="digitador" value="<?php echo $_SESSION['nombres'] ?>" class="campo" style="width: 200px" readonly/></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Nro de Factura Preimpresa: </label></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">001  - </label></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">001  - </label></td>
@@ -174,7 +197,7 @@ $cont1++;
                                                             </tr>  
                                                         </table>
 
-                                                        <table cellpadding="2" style="margin-left: 10px">
+                                                        <table cellpadding="2" style="display: none">
                                                             <tr>
                                                                 <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
                                                                 <td><select name="formas" id="formas">
@@ -201,26 +224,29 @@ $cont1++;
                                                                 <td><input type="text" name="fecha_caducidad" id="fecha_caducidad" class="campo" style="width: 120px; margin-left: 5px" value="<?php echo date("Y-m-d"); ?>" readonly /></td>
                                                             </tr>
                                                         </table>
-
-                                                        <hr style="color: #0056b2;" /> 
-                                                        <p>Detalle de la factura</p>
+                                                    </fieldset>  
+                                                    <br />
+                                                    <fieldset>
+                                                        <legend>Detalle Factura</legend>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label>Código:</label></td>   
                                                                 <td><label>Producto:</label></td>   
                                                                 <td><label>Cantidad:</label></td>   
                                                                 <td><label style="width: 100%">P. Venta:</label></td>
-                                                                <td><label>Descuento:</label></td>
-                                                                <td><label>Disponibles:</label></td>
+                                                                <!--<td><label>Descuento:</label></td>-->
+                                                                <!--<td><label>Stock:</label></td>-->
+                                                                <!--<td><label>Items:</label></td>-->
                                                             </tr>
 
                                                             <tr>
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 180px"  placeholder="Buscar..."/></td>
-                                                                <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
+                                                                <td><input type="text" name="producto" id="producto" class="campo" style="width: 300px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>
                                                                 <td><input type="text" name="p_venta" id="p_venta" style="width: 60px" class="campo" maxlength="10"/></td>
-                                                                <td><input type="number" name="descuento" id="descuento" class="campo" readonly style="width: 60px" maxlength="10" placeholder="%" min="0" max="0" /></td>
-                                                                <td><input type="text" name="disponibles" id="disponibles" class="campo" readonly style="width: 60px" maxlength="10" value=""/></td>
+                                                                <!--<td><input type="number" name="descuento" id="descuento" class="campo" readonly style="width: 60px" maxlength="10" placeholder="%" min="0" max="0" /></td>-->
+                                                                <!--<td><input type="text" name="disponibles" id="disponibles" class="campo" readonly style="width: 60px" maxlength="10" value=""/></td>-->
+                                                                <!--<td><input type="number" name="items" id="items" class="campo" style="width: 60px" maxlength="10" value="25" min="25"/></td>-->
                                                                 <!--<td><input type="button" class="btn btn-primary" id='btncargar' style="margin-top: -10px" value="Cargar"></td>-->
                                                                 <td><input type="hidden" name="iva_producto" id="iva_producto" class="campo" /></td>
                                                                 <td><input type="hidden" name="carga_series" id="carga_series" class="campo" /></td>
