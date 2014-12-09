@@ -198,8 +198,8 @@ $cont1++;
 
                                                         <table cellpadding="2" style="display: none">
                                                             <tr>
-                                                                <td><label for="formas2"  style="width: 100%">Formas de Pago:</label></td>
-                                                                <td><select name="formas2" id="formas2">
+                                                                <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
+                                                                <td><select name="formas" id="formas">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
                                                                         <option value="Cheque">Cheque</option>
@@ -212,20 +212,6 @@ $cont1++;
                                                                 <td><select id="cuotas" name="cuotas" style="width: 100px"></select></td>
                                                             </tr>
                                                         </table>
-
-                                                        <table cellpadding="2" style="margin-left: 10px">
-                                                            <tr>
-                                                                <td><label for="formas"  style="width: 100%" >Formas de Pago:</label></td>
-                                                                <td><select name="formas" id="formas" style="margin-left: 45px">
-                                                                        <option value="Contado">Contado</option>
-                                                                        <option value="Credito">Cheque</option>
-                                                                        <option value="Cheque">Targeta</option>
-                                                                    </select> </td>
-
-                                                            </tr>
-                                                        </table>
-                                                        
-                                                        
 
                                                         <table cellpadding="2" style="display: none">
                                                             <tr>
