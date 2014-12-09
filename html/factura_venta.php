@@ -37,7 +37,6 @@ $cont1++;
         <link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css"/> 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/link_top.css" rel="stylesheet" />
@@ -115,7 +114,7 @@ $cont1++;
                                                     <fieldset>
                                                         <section class="columna_1">
                                                             <div class="control-group">											
-                                                                <label class="control-label" for="nombres_cli">Comprobante:</label>
+                                                                <label class="control-label" for="comprobante">Comprobante:</label>
                                                                 <div class="controls">
                                                                     <input type="text" name="comprobante" id="comprobante" readonly class="campo" value="<?php echo $cont1 ?>" style="width: 80px"/>
                                                                 </div>
@@ -124,7 +123,7 @@ $cont1++;
 
                                                         <section class="columna_2">
                                                             <div class="control-group">											
-                                                                <label class="control-label" for="nombres_cli">Fecha Actual:</label>
+                                                                <label class="control-label" for="fecha_actual">Fecha Actual:</label>
                                                                 <div class="controls">
                                                                     <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
                                                                 </div>
@@ -133,7 +132,7 @@ $cont1++;
 
                                                         <section class="columna_3">
                                                             <div class="control-group">											
-                                                                <label class="control-label" for="nombres_cli">Hora Actual:</label>
+                                                                <label class="control-label" for="hora_actual">Hora Actual:</label>
                                                                 <div class="controls">
                                                                     <input type="text" name="hora_actual" id="hora_actual" readonly class="campo" style="width: 100px"/>
                                                                 </div>
@@ -142,7 +141,7 @@ $cont1++;
 
                                                         <section class="columna_4">
                                                             <div class="control-group">											
-                                                                <label class="control-label" for="nombres_cli"> Digitad@r:</label>
+                                                                <label class="control-label" for="digitador"> Digitad@r:</label>
                                                                 <div class="controls">
                                                                     <input type="text" name="digitador" id="digitador" value="<?php echo $_SESSION['nombres'] ?>" class="campo" style="width: 200px" readonly/>
                                                                     <input type="hidden" name="comprobante2" id="comprobante2" class="campo" style="width: 100px" value="<?php echo $cont1 ?>" />
@@ -199,8 +198,8 @@ $cont1++;
 
                                                         <table cellpadding="2" style="display: none">
                                                             <tr>
-                                                                <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
-                                                                <td><select name="formas" id="formas">
+                                                                <td><label for="formas2"  style="width: 100%">Formas de Pago:</label></td>
+                                                                <td><select name="formas2" id="formas2">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
                                                                         <option value="Cheque">Cheque</option>
@@ -213,6 +212,20 @@ $cont1++;
                                                                 <td><select id="cuotas" name="cuotas" style="width: 100px"></select></td>
                                                             </tr>
                                                         </table>
+
+                                                        <table cellpadding="2" style="margin-left: 10px">
+                                                            <tr>
+                                                                <td><label for="formas"  style="width: 100%" >Formas de Pago:</label></td>
+                                                                <td><select name="formas" id="formas" style="margin-left: 45px">
+                                                                        <option value="Contado">Contado</option>
+                                                                        <option value="Credito">Cheque</option>
+                                                                        <option value="Cheque">Targeta</option>
+                                                                    </select> </td>
+
+                                                            </tr>
+                                                        </table>
+                                                        
+                                                        
 
                                                         <table cellpadding="2" style="display: none">
                                                             <tr>
