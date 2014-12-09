@@ -676,7 +676,7 @@ function inicio() {
          jQuery('#list').jqGrid('restoreRow', id);   
          jQuery("#list").jqGrid('GridToForm', id, "#productos_form");
          $("#btnGuardar").attr("disabled", true);
-         document.getElementById("cod_prod").readOnly = true;
+//         document.getElementById("cod_prod").readOnly = true;
          $("#productos").dialog("close");      
          }
     }).jqGrid('navGrid', '#pager',
@@ -716,7 +716,7 @@ function inicio() {
             if (id) {
                 jQuery("#list").jqGrid('GridToForm', id, "#productos_form");
                 $("#btnGuardar").attr("disabled", true);
-                document.getElementById("cod_prod").readOnly = true;
+//                document.getElementById("cod_prod").readOnly = true;
                 $("#productos").dialog("close");
             } else {
                 alertify.alert("Seleccione un fila");

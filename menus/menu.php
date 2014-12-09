@@ -25,7 +25,7 @@ function menu_1() {
             <li><a href="" target="_parent"><i class="icon-book"></i> Procesos</a>
                 <ul>
                     <li><a href="../html/inventario.php" target="_blank">Inventario</a></li>
-                    <li><a href="../html/proformas.php" target="_blank">Proformas</a></li>
+                    <!--<li><a href="../html/proformas.php" target="_blank">Proformas</a></li>-->
                     <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="../html/factura_compra.php" target="_blank">Productos Bodega</a></li>
@@ -46,7 +46,7 @@ function menu_1() {
                     </li>
                     <li><a href="" target="_parent">Cartera</a>
                         <ul>
-                            <li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>
+                            <!--<li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>-->
                             <li><a href="../html/cuentasPagar.php" target="_blank">Cuentas por pagar</a></li>
                             <li><a href="" target="_blank">Externas</a>
                             <ul>
@@ -129,12 +129,12 @@ function menu_1() {
                             </li>
                         </ul>
                    </li>
-                   <li><a href="" target="_parent">Proformas</a>
+                   <!--<li><a href="" target="_parent">Proformas</a>
                         <ul>
                             <li><a href="" target="_parent" id="proformas">Proformas</a></li>
                             <li><a href="" id="lista_proformas">Lista de Proformas</a></li>
                         </ul>
-                  </li>  
+                  </li> --> 
                   <li><a href="" target="_parent">Gastos</a>
                       <ul>
                         <li><a href="" id="gastos">Gastos por factura</a></li> 
@@ -175,7 +175,7 @@ function menu_2() {
             <li><a href="" target="_parent"><i class="icon-book"></i> Procesos</a>
                 <ul>
                     <li><a href="../html/inventario.php" target="_blank">Inventario</a></li>
-                    <li><a href="../html/proformas.php" target="_blank">Proformas</a></li>
+                    <!--<li><a href="../html/proformas.php" target="_blank">Proformas</a></li>-->
                     <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="../html/factura_compra.php" target="_blank">Productos Bodega</a></li>
@@ -282,12 +282,12 @@ function menu_2() {
                             </li>
                         </ul>
                    </li>
-                  <li><a href="" target="_parent">Proformas</a>
+                  <!--<li><a href="" target="_parent">Proformas</a>
                         <ul>
                             <li><a href="" target="_parent" id="proformas">Proformas</a></li>
                             <li><a href="" id="lista_proformas">Lista de Proformas</a></li>
                         </ul>
-                   </li> 
+                   </li>--> 
                   <li><a href="" target="_parent">Gastos</a>
                       <ul>
                         <li><a href="" id="gastos">Gastos por factura</a></li> 

@@ -155,7 +155,7 @@ include '../menus/menu.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="control-group" style="display: none">
+                                                    <div class="control-group">
                                                         <label class="control-label" for="descuento">Descuento:</label>
                                                         <div class="controls">
                                                             <input type="number"  name="descuento" id="descuento"  value="0" min="0" required class="campo" />
@@ -163,16 +163,16 @@ include '../menus/menu.php';
                                                     </div>
                                                     
                                                     <div class="control-group">
-                                                        <label class="control-label" for="fecha_creacion">Fecha Creación: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="<?php echo date("Y-m-d"); ?>"/>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="control-group">
                                                         <label class="control-label" for="minimo">Stock Mínimo:</label>
                                                         <div class="controls">
                                                             <input  type="number" name="minimo" id="minimo" value="1" min="1" required class="campo"/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="fecha_creacion">Fecha Creación: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="<?php echo date("Y-m-d"); ?>"/>
                                                         </div>
                                                     </div>
 
