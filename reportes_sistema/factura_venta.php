@@ -122,18 +122,14 @@ $sql=pg_query("select id_factura_venta,num_factura,nombre_empresa,telefono_empre
 	{		
 		$fila = pg_fetch_row($sql);								
 		$pdf->SetFont('Arial','',10); 		
-		$pdf->SetX(2);		
-		$pdf->Text(2,10,utf8_decode(''.strtoupper("FACTURA NRO")),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(35,10,utf8_decode(''.strtoupper($fila[1])),0,'C', 0);////CLIENTE (X,Y)						
-		$pdf->Text(2,15,utf8_decode(''."FECHA:"),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(30,15,utf8_decode(''.strtoupper($fecha)),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(2,20,utf8_decode(''."RUC:"),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(20,20,utf8_decode(''.strtoupper($fila[9])),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(2,25,utf8_decode(''."CLIENTE:"),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(20,25,utf8_decode(''.strtoupper($fila[8])),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(2,30,utf8_decode(''."DIR.:"),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Text(20,30,utf8_decode(''.strtoupper($fila[18])),0,'C', 0);////CLIENTE (X,Y)	
-		$pdf->Ln(25);							
+		$pdf->SetX(2);				
+		$pdf->Text(2,15,utf8_decode(''."RUC:"),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Text(20,15,utf8_decode(''.strtoupper($fila[9])),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Text(2,20,utf8_decode(''."CLIENTE:"),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Text(20,20,utf8_decode(''.strtoupper($fila[8])),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Text(2,25,utf8_decode(''."DIR.:"),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Text(20,25,utf8_decode(''.strtoupper($fila[18])),0,'C', 0);////CLIENTE (X,Y)	
+		$pdf->Ln(20);							
 	}	
     $pdf->SetX(2);		
     $pdf->SetWidths(array(10, 33, 15, 15));	
@@ -149,8 +145,9 @@ $sql=pg_query("select id_factura_venta,num_factura,nombre_empresa,telefono_empre
 		
 		$pdf->SetX(2);
 		$pdf->Row(array(utf8_decode($fila[0]), $descripcion, utf8_decode($fila[2]), utf8_decode($fila[3])));
+		
 	}	
-	$pdf->Ln(30);
+	$pdf->SetY(125);		
 	$sql=pg_query("select tarifa0,tarifa12,iva_venta,descuento_venta,total_venta from factura_venta where id_factura_venta= '$_GET[id]'");    
     $sub0 = 0;						
     $sub12 = 0;
@@ -181,5 +178,6 @@ $sql=pg_query("select id_factura_venta,num_factura,nombre_empresa,telefono_empre
 	$pdf->SetX(2);		
 	$pdf->Row(array(utf8_decode("Recibí Conforme"),"Entegre Conforme"));	
 
+$pdf->Text(2,200,utf8_decode(''."*"),0,'C', 0);////CLIENTE (X,Y)	
 $pdf->Output();
 ?>
