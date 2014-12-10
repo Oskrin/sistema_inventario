@@ -205,10 +205,10 @@ include '../menus/menu.php';
                                                         </div>			
                                                     </div>
 
-                                                    <div class="control-group">											
+                                                    <div class="control-group" style="display: none">											
                                                         <label class="control-label" for="iva">Iva: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <select id="iva" name="iva" style="width: 200px">
+                                                            <select id="iva" name="iva" style="width: 200px" >
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Si" selected>Si</option> 
                                                                 <option value="No">No</option> 
