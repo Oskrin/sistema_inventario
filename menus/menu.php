@@ -38,12 +38,7 @@ function menu_1() {
                             <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
-                    <li><a href="" target="_parent">Transferencias</a>
-                        <ul>
-                            <li><a href="../html/ingresos.php" target="_blank">Ingresos</a></li>
-                            <li><a href="../html/egresos.php" target="_blank">Egresos</a></li>
-                        </ul>
-                    </li>
+
                     <li><a href="" target="_parent">Cartera</a>
                         <ul>
                             <!--<li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>-->
@@ -188,13 +183,7 @@ function menu_2() {
                             <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
-                    <li><a href="" target="_parent">Transferencias</a>
-                        <ul>
-                            <li><a href="../html/ingresos.php" target="_blank">Ingresos</a></li>
-                            <li><a href="../html/egresos.php" target="_blank">Egresos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="" target="_parent">Cartera</a>
+                     <li><a href="" target="_parent">Cartera</a>
                         <ul>
                             <li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>
                             <li><a href="../html/cuentasPagar.php" target="_blank">Cuentas por pagar</a></li>

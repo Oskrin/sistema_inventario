@@ -125,7 +125,7 @@ $cont1++;
                                                             <div class="control-group">											
                                                                 <label class="control-label" for="fecha_actual">Fecha Actual:</label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
+                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php date_default_timezone_set('America/Guayaquil'); echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
                                                                 </div>
                                                             </div>
                                                         </section>
@@ -198,8 +198,8 @@ $cont1++;
 
                                                         <table cellpadding="2" style="display: none">
                                                             <tr>
-                                                                <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
-                                                                <td><select name="formas" id="formas">
+                                                                <td><label for="formas2"  style="width: 100%">Formas de Pago:</label></td>
+                                                                <td><select name="formas2" id="formas2">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
                                                                         <option value="Cheque">Cheque</option>
@@ -221,6 +221,18 @@ $cont1++;
                                                                 <td><input type="text" name="fecha_auto" id="fecha_auto" class="campo" style="width: 120px; margin-left: 5px" value="<?php echo date("Y-m-d"); ?>" readonly /></td>
                                                                 <td><label for="fecha_caducidad" style="margin-left: 10px">Fecha caducidad:</label></td>
                                                                 <td><input type="text" name="fecha_caducidad" id="fecha_caducidad" class="campo" style="width: 120px; margin-left: 5px" value="<?php echo date("Y-m-d"); ?>" readonly /></td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <table cellpadding="2" style="margin-left: 10px" >
+                                                            <tr>
+                                                                <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
+                                                                <td><select name="formas" id="formas" style="margin-left: 45px; width: 150px">
+                                                                        <option value="Contado">Contado</option>
+                                                                        <option value="Cheque">Cheque</option>
+                                                                        <option value="Targeta">Tarjeta</option>
+                                                                    </select> </td>
+                                                               
                                                             </tr>
                                                         </table>
                                                     </fieldset>  

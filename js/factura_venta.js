@@ -2042,7 +2042,9 @@ function inicio() {
 
     ///////////calendarios////////////
     $("#fecha_actual").datepicker({
-        dateFormat: 'yy-mm-dd'
+
+        dateFormat: 'yy-mm-dd',
+        
     });
     $("#cancelacion").datepicker({
         dateFormat: 'yy-mm-dd'
@@ -2074,7 +2076,7 @@ function inicio() {
             {name: 'precio_u', index: 'precio_u', editable: true, search: false, frozen: true, editrules: {required: true}, align: 'center', width: 110, editoptions:{maxlength: 10, size:15,dataInit: function(elem){$(elem).bind("keypress", function(e) {return punto(e)})}}}, 
             {name: 'descuento', index: 'descuento', editable: false, frozen: true, hidden: false, editrules: {required: true}, align: 'center', width: 90},
             {name: 'total', index: 'total', editable: false, search: false, frozen: true, editrules: {required: true}, align: 'center', width: 100},
-            {name: 'iva', index: 'iva', align: 'center', width: 100, hidden: false},
+            {name: 'iva', index: 'iva', align: 'center', width: 100, hidden: true},
             {name: 'pendiente', index: 'pendiente', editable: false, frozen: true, hidden: true, editrules: {required: true}, align: 'center', width: 90}
         ],
         rowNum: 30,
