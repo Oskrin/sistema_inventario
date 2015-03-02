@@ -387,7 +387,7 @@ function inicio() {
     ///////////calendarios/////
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
 
     ////////////////////buscador cuentas por cobrar/////////////////////////
     jQuery("#list2").jqGrid({

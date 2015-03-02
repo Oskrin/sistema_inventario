@@ -91,7 +91,7 @@ include '../menus/menu.php';
                                                         <label class="control-label" for="tipo_docu">Tipo Documento: <font color="red">*</font></label>
                                                         <div class="controls" >
                                                             <select name="tipo_docu" id="tipo_docu" required style="width: 200px">
-                                                                <option value="">......Seleccione......</option>
+                                                                <!--<option value="">......Seleccione......</option>-->
                                                                 <option value="Cedula">Cedula</option>
                                                                 <option value="Ruc">Ruc</option>
                                                                 <option value="Pasaporte">Pasaporte</option>

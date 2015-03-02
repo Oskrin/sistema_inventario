@@ -13,12 +13,11 @@ while ($row = pg_fetch_row($consulta)) {
 }
 $cont++;
 ////////////////////////////////////////
-
 ////////////guardar productos///////////
 $valor = number_format($_POST['precio_compra'], 2, '.', '');
 $valor2 = number_format($_POST['precio_minorista'], 2, '.', '');
 $valor3 = number_format($_POST['precio_mayorista'], 2, '.', '');
-pg_query("insert into productos values('$cont','$_POST[cod_prod]','$_POST[cod_barras]','$_POST[nombre_art]','$_POST[iva]','$_POST[series]','$valor','$_POST[utilidad_minorista]','$_POST[utilidad_mayorista]','$valor2','$valor3','$_POST[categoria]','$_POST[marca]','$_POST[stock]','$_POST[minimo]','$_POST[maximo]','$_POST[fecha_creacion]','$_POST[modelo]','$_POST[aplicacion]','$_POST[descuento]','$_POST[vendible]','$_POST[inventario]','','')");
+pg_query("insert into productos values('$cont','$_POST[cod_prod]','$_POST[cod_barras]','" . strtoupper($_POST[nombre_art]) . "','$_POST[iva]','$_POST[series]','$valor','$_POST[utilidad_minorista]','$_POST[utilidad_mayorista]','$valor2','$valor3','$_POST[categoria]','$_POST[marca]','$_POST[stock]','$_POST[minimo]','$_POST[maximo]','$_POST[fecha_creacion]','$_POST[modelo]','$_POST[aplicacion]','$_POST[descuento]','$_POST[vendible]','$_POST[inventario]','','','$_POST[medida]')");
 ///////////////////////////////////////
 
 $data = 1;

@@ -31,7 +31,7 @@ session_destroy();
         <script type="text/javascript" src="../js/alertify.min.js"></script>
     </head>
 
-    <body style="background: url(../images/fondo.jpg)no-repeat fixed center;
+    <body style="background: url(../images/fondo.fw.png)no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

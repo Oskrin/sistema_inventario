@@ -63,39 +63,39 @@ function guardar_cliente() {
     
     if ($("#tipo_docu").val() === "") {
         $("#tipo_docu").focus();
-        alertify.alert("Seleccione un tipo de documento ");
+        alertify.error("Seleccione un tipo de documento ");
     } else {
         if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
             $("#ruc_ci").focus();
-            alertify.alert("Error.. Minimo 10 digitos ");
+            alertify.error("Error.. Minimo 10 digitos ");
         } else {
             if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 13 digitos ");
+                alertify.error("Error.. Minimo 13 digitos ");
             } else {
                 if ($("#nombres_cli").val() === "") {
                     $("#nombres_cli").focus();
-                    alertify.alert("Ingrese Nombres completos");
+                    alertify.error("Ingrese Nombres completos");
                 } else {
                     if ($("#tipo_cli").val() === "") {
                         $("#tipo_cli").focus();
-                        alertify.alert("Seleccione Tipo cliente");
+                        alertify.error("Seleccione Tipo cliente");
                     } else {
                         if ($("#direccion_cli").val() === "") {
                             $("#direccion_cli").focus();
-                            alertify.alert("Ingrese una dirección");
+                            alertify.error("Ingrese una dirección");
                         } else {
                             if ($("#pais_cli").val() === "") {
                                 $("#pais_cli").focus();
-                                alertify.alert("Ingrese un pais");
+                                alertify.error("Ingrese un pais");
                             } else {
                                 if ($("#ciudad_cli").val() === "") {
                                     $("#ciudad_cli").focus();
-                                    alertify.alert("Ingrese una ciudad");
+                                    alertify.error("Ingrese una ciudad");
                                 } else {
                                     if ($("#cupo_credito").val() === "") {
                                         $("#cupo_credito").focus();
-                                        alertify.alert("Ingrese cantidad del crédito");
+                                        alertify.error("Ingrese cantidad del crédito");
                                     }else{
                                         $.ajax({
                                             type: "POST",
@@ -124,43 +124,43 @@ function modificar_cliente() {
     var iden = $("#ruc_ci").val();
     
     if ($("#id_cliente").val() === "") {
-        alertify.alert("Seleccione un cliente");
+        alertify.error("Seleccione un cliente");
     } else {
         if ($("#tipo_docu").val() === "") {
             $("#tipo_docu").focus();
-            alertify.alert("Seleccione un tipo de documento ");
+            alertify.error("Seleccione un tipo de documento ");
         } else {
             if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 10 digitos ");
+                alertify.error("Error.. Minimo 10 digitos ");
             } else {
                 if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                     $("#ruc_ci").focus();
-                    alertify.alert("Error.. Minimo 13 digitos ");
+                    alertify.error("Error.. Minimo 13 digitos ");
                 } else {
                     if ($("#nombres_cli").val() === "") {
                         $("#nombres_cli").focus();
-                        alertify.alert("Ingrese Nombres completos");
+                        alertify.error("Ingrese Nombres completos");
                     } else {
                         if ($("#tipo_cli").val() === "") {
                             $("#tipo_cli").focus();
-                            alertify.alert("Seleccione Tipo cliente");
+                            alertify.error("Seleccione Tipo cliente");
                         } else {
                             if ($("#direccion_cli").val() === "") {
                                 $("#direccion_cli").focus();
-                                alertify.alert("Ingrese una dirección");
+                                alertify.error("Ingrese una dirección");
                             } else {
                                 if ($("#pais_cli").val() === "") {
                                     $("#pais_cli").focus();
-                                    alertify.alert("Ingrese un pais");
+                                    alertify.error("Ingrese un pais");
                                 } else {
                                     if ($("#ciudad_cli").val() === "") {
                                         $("#ciudad_cli").focus();
-                                        alertify.alert("Ingrese una ciudad");
+                                        alertify.error("Ingrese una ciudad");
                                     } else {
                                         if ($("#cupo_credito").val() === "") {
                                             $("#cupo_credito").focus();
-                                            alertify.alert("Ingrese cantidad del crédito");
+                                            alertify.error("Ingrese cantidad del crédito");
                                         }else{
                                             $.ajax({
                                                 type: "POST",
@@ -295,9 +295,11 @@ function punto(e){
 }
 
 function inicio() {
+    $("#ruc_ci").focus();
+    alertify.set({ delay: 1000 });
 
     //////////atributos////////////
-    $("#ruc_ci").attr("disabled", "disabled");
+    //$("#ruc_ci").attr("disabled", "disabled");
     $("#nro_telefono").validCampoFranz("0123456789");
     $("#nro_celular").validCampoFranz("0123456789");
     //////////////////////////////

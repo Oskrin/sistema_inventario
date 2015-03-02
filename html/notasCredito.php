@@ -116,7 +116,7 @@ $cont1++;
                                                             <div class="control-group">											
                                                                 <label class="control-label" for="nombres_cli">Fecha Actual:</label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
+                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="" class="campo" style="width: 100px" />
                                                                 </div>
                                                             </div>
                                                         </section>

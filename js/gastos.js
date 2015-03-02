@@ -229,7 +229,7 @@ function inicio() {
     ///////////calendarios////////////
     $("#fecha_actual").datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
 
 ////////////////////buscador facturas ventas/////////////////////////
         jQuery("#list2").jqGrid({

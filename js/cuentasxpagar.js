@@ -598,7 +598,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
 ///////////calendarios/////
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
 
     ///////////tabla local/////////////   
         var can;

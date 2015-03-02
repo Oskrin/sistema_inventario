@@ -65,47 +65,47 @@ function guardar_proveedor() {
     
     if ($("#tipo_docu").val() === "") {
         $("#tipo_docu").focus();
-        alertify.alert("Seleccione un tipo de documento ");
+        alertify.error("Seleccione un tipo de documento ");
     } else {
         if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
             $("#ruc_ci").focus();
-            alertify.alert("Error.. Minimo 10 digitos ");
+            alertify.error("Error.. Minimo 10 digitos ");
         } else {
             if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 13 digitos ");
+                alertify.error("Error.. Minimo 13 digitos ");
             } else {
                 if ($("#empresa_pro").val() === "") {
                     $("#empresa_pro").focus();
-                    alertify.alert("Indique nombre de la empresa");
+                    alertify.error("Indique nombre de la empresa");
                 } else {
                     if ($("#direccion_pro").val() === "") {
                         $("#direccion_pro").focus();
-                        alertify.alert("Indique la dirección");
+                        alertify.error("Indique la dirección");
                     } else {
                         if ($("#nro_telefono").val() === "") {
                             $("#nro_telefono").focus();
-                            alertify.alert("Indique número telefónico");
+                            alertify.error("Indique número telefónico");
                         } else {
                             if (!expr.test(correo) || $("#correo").val() === "") {
                                 $("#correo").focus();
-                                alertify.alert("Ingrese un correo");
+                                alertify.error("Ingrese un correo");
                             }else{
                                 if ($("#pais_pro").val() === "") {
                                     $("#pais_pro").focus();
-                                    alertify.alert("Ingrese el país");
+                                    alertify.error("Ingrese el país");
                                 } else {
                                     if ($("#ciudad_pro").val() === "") {
                                         $("#ciudad_pro").focus();
-                                        alertify.alert("Ingrese la ciudad");
+                                        alertify.error("Ingrese la ciudad");
                                     } else {
                                         if ($("#forma_pago").val() === "") {
                                             $("#forma_pago").focus();
-                                            alertify.alert("Seleccione forma de pago");
+                                            alertify.error("Seleccione forma de pago");
                                         } else {
                                             if ($("#principal_pro").val() === "") {
                                                 $("#principal_pro").focus();
-                                                alertify.alert("Seleccione un tipo");
+                                                alertify.error("Seleccione un tipo");
                                             }else{
                                                 $.ajax({
                                                     type: "POST",
@@ -141,51 +141,51 @@ function modificar_proveedor() {
     var correo = $("#correo").val();
     
     if ($("#id_proveedor").val() === "") {
-        alertify.alert("Seleccione un proveedor");
+        alertify.error("Seleccione un proveedor");
     } else {
         if ($("#tipo_docu").val() === "") {
             $("#tipo_docu").focus();
-            alertify.alert("Seleccione un tipo de documento ");
+            alertify.error("Seleccione un tipo de documento ");
         } else {
             if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 10 digitos ");
+                alertify.error("Error.. Minimo 10 digitos ");
             } else {
                 if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                     $("#ruc_ci").focus();
-                    alertify.alert("Error.. Minimo 13 digitos ");
+                    alertify.error("Error.. Minimo 13 digitos ");
                 } else {
                     if ($("#empresa_pro").val() === "") {
                         $("#empresa_pro").focus();
-                        alertify.alert("Indique nombre de la empresa");
+                        alertify.error("Indique nombre de la empresa");
                     } else {
                         if ($("#direccion_pro").val() === "") {
                             $("#direccion_pro").focus();
-                            alertify.alert("Indique la dirección");
+                            alertify.error("Indique la dirección");
                         } else {
                             if ($("#nro_telefono").val() === "") {
                                 $("#nro_telefono").focus();
-                                alertify.alert("Indique número telefónico");
+                                alertify.error("Indique número telefónico");
                             } else {
                                 if (!expr.test(correo) || $("#correo").val() === "") {
                                     $("#correo").focus();
-                                    alertify.alert("Ingrese un correo");
+                                    alertify.error("Ingrese un correo");
                                 } else {
                                     if ($("#pais_pro").val() === "") {
                                         $("#pais_pro").focus();
-                                        alertify.alert("Ingrese el pais");
+                                        alertify.error("Ingrese el pais");
                                     } else {
                                         if ($("#ciudad_pro").val() === "") {
                                             $("#ciudad_pro").focus();
-                                            alertify.alert("Ingrese la ciudad");
+                                            alertify.error("Ingrese la ciudad");
                                         } else {
                                             if ($("#forma_pago").val() === "") {
                                                 $("#forma_pago").focus();
-                                                alertify.alert("Seleccione forma de pago");
+                                                alertify.error("Seleccione forma de pago");
                                             } else {
                                                 if ($("#principal_pro").val() === "") {
                                                     $("#principal_pro").focus();
-                                                    alertify.alert("Seleccione un tipo");
+                                                    alertify.error("Seleccione un tipo");
                                                 }else{
                                                     $.ajax({
                                                         type: "POST",
@@ -314,11 +314,14 @@ function reset () {
 
 function inicio() {
     
+    $("#ruc_ci").focus();
+    alertify.set({ delay: 1000 });
+    
     $("#nro_telefono").validCampoFranz("0123456789");
     $("#nro_celular").validCampoFranz("0123456789");
 
     //////////atributos////////////
-    $("#ruc_ci").attr("disabled", "disabled");
+    //$("#ruc_ci").attr("disabled", "disabled");
     ///////tipo pago//////////////
 
     $("#tipo_docu").change(function() {

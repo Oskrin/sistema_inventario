@@ -1122,7 +1122,7 @@ function inicio() {
     ///////////calendarios/////
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
 ////////////////////////
 
 //////////////////////tabla notas credito/////////////////////////

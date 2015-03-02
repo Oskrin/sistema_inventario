@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include '../procesos/base.php';
 if (empty($_SESSION['id'])) {
@@ -146,7 +146,7 @@ include '../menus/menu.php';
                                                                     <?php
                                                                     $consulta = pg_query("select * from categoria ");
                                                                     while ($row = pg_fetch_row($consulta)) {
-                                                                        echo "<option id=$row[0] value=$row[1]>$row[1]</option>";
+                                                                        echo "<option id=$row[1] value=$row[1]>$row[1]</option>";
                                                                     }
                                                                     ?>
                                                                 </select>
@@ -172,7 +172,7 @@ include '../menus/menu.php';
                                                     <div class="control-group">
                                                         <label class="control-label" for="fecha_creacion">Fecha Creación: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="<?php echo date("Y-m-d"); ?>"/>
+                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="" readonly/>
                                                         </div>
                                                     </div>
 
@@ -205,7 +205,7 @@ include '../menus/menu.php';
                                                         </div>			
                                                     </div>
 
-                                                    <div class="control-group" style="display: none">											
+                                                    <div class="control-group">											
                                                         <label class="control-label" for="iva">Iva: <font color="red">*</font></label>
                                                         <div class="controls">
                                                             <select id="iva" name="iva" style="width: 200px" >
@@ -256,11 +256,29 @@ include '../menus/menu.php';
                                                                     <?php
                                                                     $consulta2 = pg_query("select * from marcas ");
                                                                     while ($row = pg_fetch_row($consulta2)) {
-                                                                        echo "<option id=$row[0] value=$row[1]>$row[1]</option>";
+                                                                        echo "<option id=$row[1] value=$row[1]>$row[1]</option>";
                                                                     }
                                                                     ?>
                                                                 </select>
                                                                 <input type="button" class="btn btn-primary" id='btnMarca' value="..." title="INGRESO MARCAS" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="marca">Unidades de medida: </label>
+                                                        <div class="controls">
+                                                            <div class="input-append">
+                                                                <select id="medida" name="medida" class="campo" style="width: 165px" >
+                                                                    <option value="">........Seleccione........</option>
+                                                                    <?php
+                                                                    $consulta3 = pg_query("select * from unidades_medida ");
+                                                                    while ($row = pg_fetch_row($consulta3)) {
+                                                                        echo "<option id=$row[1] value=$row[1]>$row[1]</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                                <input type="button" class="btn btn-primary" id='btnUnidades' value="..." title="INGRESO UNIDADES DE MEDIDA" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,7 +320,7 @@ include '../menus/menu.php';
                                             <div id="pager"></div>
                                         </div>
 
-                                        <div id="categorias" title="AGREGAR CATEGORIA">
+                                        <div id="categorias" title="CATEGORIAS">
                                             <div class="control-group">
                                                 <label class="control-label" for="nombre_categoria">Nombre Categoria: <font color="red">*</font></label>
                                                 <div class="controls" >
@@ -312,7 +330,7 @@ include '../menus/menu.php';
                                             <button class="btn btn-primary" id='btnGuardarCategoria'>Guardar</button>
                                         </div>
 
-                                        <div id="marcas" title="AGREGAR MARCA">
+                                        <div id="marcas" title="MARCAS">
                                             <div class="control-group">
                                                 <label class="control-label" for="nombre_marca">Nombre Marca: <font color="red">*</font></label>
                                                 <div class="controls" >
@@ -320,6 +338,28 @@ include '../menus/menu.php';
                                                 </div>  
                                             </div>	
                                             <button class="btn btn-primary" id='btnGuardarMarca'>Guardar</button>
+                                        </div>
+                                        
+                                        <div id="unidades" title="UNIDADES DE MEDIDA">
+                                            <div class="control-group">
+                                                <label class="control-label" for="nombre_marca">Descripción: <font color="red">*</font></label>
+                                                <div class="controls" >
+                                                    <input type="text" name="descripcion" id="descripcion" class="campo" placeholder="Ingrese la descripción" required />
+                                                </div>  
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="nombre_marca">Abreviatura: <font color="red">*</font></label>
+                                                <div class="controls" >
+                                                    <input type="text" name="abreviatura" id="abreviatura" class="campo" placeholder="Ingrese abreviatura" required />
+                                                </div>  
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="nombre_marca">Cantidad: <font color="red">*</font></label>
+                                                <div class="controls" >
+                                                    <input type="text" name="cantidad" id="cantidad" class="campo" placeholder="Ingrese cantidad" required />
+                                                </div>  
+                                            </div>
+                                            <button class="btn btn-primary" id='btnGuardarUnidad'>Guardar</button>
                                         </div>
 
                                         <div id="clave_permiso" title="PERMISOS">

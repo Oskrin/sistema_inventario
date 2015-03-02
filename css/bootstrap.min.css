@@ -1699,7 +1699,7 @@ background-repeat:no-repeat;
 
   
   
-  background: #512500!important;
+  background: #44B2E2!important;
   border-color: rgba(0, 0, 0, 0.05) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15);
   color: #333333;
   
@@ -1727,7 +1727,7 @@ background-repeat:no-repeat;
   -moz-transition: background-color 1s;
   -o-transition: background-color 1s;
   transition: background-color 1s;
-  background: #A7211E!important;
+  background: #129ED9!important;
 }
 .btn:active, .btn.active {
 	background-color: #dbdbdb \9;

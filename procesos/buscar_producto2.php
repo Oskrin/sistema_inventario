@@ -10,6 +10,7 @@ while ($row = pg_fetch_row($consulta)) {
     $data[] = array(
         'value' => $row[3],
         'codigo' => $row[1],
+        'codigo_barras' => $row[2],
         'precio' => $row[6],
         'iva_producto' => $row[4],
         'carga_series' => $row[5],

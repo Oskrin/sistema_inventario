@@ -77,7 +77,7 @@ textarea {
 
 .navbar-inner {
     padding: 20px 0;
-    background: url(../images/banner.jpg)!important;
+    background: url(../images/banner.fw.png)!important;
    
 }
 
@@ -86,7 +86,7 @@ textarea {
   font-style: normal;
   font-weight: 400;
   src: local('Geostar Fill'), local('GeostarFill-Regular');
-  color: #8C2200!important;
+  color: #FFFFFF!important;
 }
 
 .navbar-fixed-top {
@@ -306,17 +306,17 @@ textarea {
     padding: 15px 0;
 
     font-size: 12px;
-    background: #512500;
-    color: #999;
+    background: #111;
+    color: #FFFFFF;
 }
 
 .footer a {
-    color: #999;
+   color: #FFFFFF;
 }
 
 .footer a:hover {
-    color: #FFF;
-    text-decoration: none;
+    color: #FFFFFF;
+   
 }
 
 .widget {
